@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{5FDF4C11-1C18-7F34-1C63-D8D674D451F0}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Paint.cs">
+    <Files>
+      <File FileName="Assets/PlayerManager.cs" Line="89" Column="39" />
+      <File FileName="Assets/PaintObject.cs" Line="4" Column="2" />
+      <File FileName="Assets/Paint.cs" Line="33" Column="45" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="dc0a1603-fba0-420b-989f-db3de7d6fda0" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

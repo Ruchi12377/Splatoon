@@ -1,0 +1,21 @@
+﻿<Properties StartupConfiguration="{2B8E9FD7-2F06-DACF-B2D5-2A155E235A50}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/PlayerManager.cs">
+    <Files>
+      <File FileName="Assets/PaintObject.cs" Line="52" Column="58" />
+      <File FileName="Assets/Paint.cs" Line="30" Column="44" />
+      <File FileName="Assets/PlayerCamera.cs" Line="24" Column="1" />
+      <File FileName="Assets/LogIn.cs" Line="14" Column="48" />
+      <File FileName="Assets/PlayerManager.cs" Line="49" Column="1" />
+      <File FileName="Assets/GameManager.cs" Line="32" Column="31" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="dc0a1603-fba0-420b-989f-db3de7d6fda0" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/rappinngu/Desktop/Splatoon/Assets/LogIn.cs" relfile="Assets/LogIn.cs" line="3" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
