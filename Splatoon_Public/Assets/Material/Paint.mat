@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ed37a0e78c6174e829684efa622b9eb5, type: 3}
+        m_Texture: {fileID: 2800000, guid: a73bc790f2321416b9f99cafc601d834, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
@@ -32,7 +32,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SubTex:
-        m_Texture: {fileID: 2800000, guid: 13cfdb46d94f44ef3a382b8e7dad3504, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4c5d98903001b44e7a9ec4b240148b7e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
