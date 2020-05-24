@@ -2,22 +2,19 @@
 
 public class PlayerCamera : MonoBehaviour
 {
-    private const float YAngle_MIN = -45;
-    private const float YAngle_MAX = 45;
+    public Transform Target { set; private get; }
 
-    public Transform target = null;
-    [SerializeField]
-    Vector3 offset = default;
+    [SerializeField] Vector3 offset = Vector3.zero;
     [SerializeField] LayerMask DetectLayer = 0;
-    private Vector3 lookAt = default;
+    [SerializeField] private float RotateSpeed = 10.0f;
+    [SerializeField] private float distance = 10.0f;
 
-    [SerializeField]
-    private float distance = 10.0f;
     private float currentX = 0.0f;
     private float currentY = 0.0f;
+    private Vector3 lookAt = Vector3.zero;
 
-    [SerializeField]
-    private float RotateSpeed = 10.0f;
+    private const float YAngle_MIN = -45;
+    private const float YAngle_MAX = 45;
 
     void Start()
     {
@@ -31,11 +28,12 @@ public class PlayerCamera : MonoBehaviour
         currentY += Input.GetAxis("Mouse Y") * RotateSpeed;
         currentY = Mathf.Clamp(currentY, YAngle_MIN, YAngle_MAX);
     }
+
     void LateUpdate()
     {
-        if (target != null)
+        if (Target != null)
         {
-            lookAt = target.position + offset;
+            lookAt = Target.position + offset;
             Vector3 dir = new Vector3(0, 0, -distance);
             Quaternion rotation = Quaternion.Euler(-currentY, currentX, 0);
 
