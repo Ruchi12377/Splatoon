@@ -16,7 +16,7 @@ public class Paint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Vector3 _direction = 5 * (rb.velocity + transform.forward) / 2;
+        Vector3 _direction = 5 * (rb.velocity + transform.forward) / 2;//自分の進んでいる向きにforwardを足して修正(ほぼおまじない
         Vector3 direction = normal(_direction);
 
         Ray ray = new Ray(transform.position, direction);
@@ -28,8 +28,8 @@ public class Paint : MonoBehaviour
                 PaintObject hitObj = hit.transform.gameObject.GetComponent<PaintObject>();
                 if (hitObj != null)
                 {
-                    bool state = hitObj.Draw(hit.textureCoord, color, Size);
-                    if (state)
+                    bool state = hitObj.Draw(hit.textureCoord, color, Size);//塗る
+                    if (state)//濡れたら自分を消す
                     {
                         Destroy(gameObject);
                     }

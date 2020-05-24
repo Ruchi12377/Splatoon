@@ -34,7 +34,7 @@ public class PlayerManager : MonoBehaviour
         {
             if (obj.activeInHierarchy && obj.GetComponent<PaintObject>() != null)
             {
-                paintObjects.Add(obj.GetComponent<PaintObject>());
+                paintObjects.Add(obj.GetComponent<PaintObject>());//ぬれるオブジェクトを全部取得
             }
         }
     }
@@ -43,17 +43,17 @@ public class PlayerManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            for (int i = 0; i < Amount; i++)
+            for (int i = 0; i < Amount; i++)//Amountの数 玉を生成
             {
                 Vector3 right = transform.right * Random.Range(-1, 1);
                 Vector3 up = transform.up * Random.Range(-1, 1) * 2;
-                Vector3 Shake = right + up;
+                Vector3 Shake = right + up;//揺らぎ
                 GameObject ball = Instantiate(Ball, point.position + Shake, Camera.main.transform.rotation);
                 Paint paint = ball.GetComponent<Paint>();
                 ball.GetComponent<MeshRenderer>().material.color = color;
-                paint.color = color;
-                paint.Size = Size * Random.Range(0.5f, 1f);
-                await Task.Delay(Random.Range(10, 100));
+                paint.color = color;//色を指定
+                paint.Size = Size * Random.Range(0.5f, 1f);//大きさのゆらぎ
+                await Task.Delay(Random.Range(10, 100));//少し時間をずらす
             }
         }
 
@@ -71,16 +71,16 @@ public class PlayerManager : MonoBehaviour
             foreach (PaintObject paint in paintObjects)
             {
                 Color[] buffer = paint.GetSubTexColor();
-                AllPixcelCount += buffer.Length;
+                AllPixcelCount += buffer.Length;//全体のピクセル
                 foreach(Color col in buffer)
                 {
                     if(col == color)
                     {
-                        PaintPixcelCount += 1;
+                        PaintPixcelCount += 1;//塗られているピクセル
                     }
                 }
             }
-            float par = PaintPixcelCount / AllPixcelCount * 100f;
+            float par = PaintPixcelCount / AllPixcelCount * 100f;//パーセンテージに変換
             text.text = par.ToString();
         }
     }
@@ -97,7 +97,7 @@ public class PlayerManager : MonoBehaviour
         Vector3 right = Camera.main.transform.right;
         float horizontal = Input.GetAxis("Horizontal");
         float vartical = Input.GetAxis("Vertical");
-        Vector3 targetDirection = horizontal * right + vartical * forward;
+        Vector3 targetDirection = horizontal * right + vartical * forward;//進む方向の決定
         moveDirection = targetDirection * Speed;
         rb.AddForce(moveDirection);
     }

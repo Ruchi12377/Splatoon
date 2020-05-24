@@ -40,6 +40,7 @@ public class PlayerCamera : MonoBehaviour
             transform.position = lookAt + rotation * dir;
             transform.LookAt(lookAt);
 
+            //減り込み判定
             if (Physics.Linecast(lookAt, transform.position, out RaycastHit hit, DetectLayer))
             {
                 transform.position = hit.point;
