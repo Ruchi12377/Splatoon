@@ -14,7 +14,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private GameObject Ball = null;
     [SerializeField]
-    private Transform point = default;
+    private Transform point = default;//発射する場所
     [SerializeField, Range(1, 50)]
     private int Size = 10;
     [SerializeField]
