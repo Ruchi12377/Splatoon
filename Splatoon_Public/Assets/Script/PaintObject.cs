@@ -31,16 +31,17 @@ public class PaintObject : MonoBehaviour
         maskTexture.filterMode = FilterMode.Point;
     }
 
-    public bool Draw(Vector2 p, Color col ,float size)
+    public bool Draw(Vector2 uv, Color col ,float size)
     {
         bool state = false;
-        p *= (height + width) / 2;
+        uv.x *= width;
+        uv.y *= height;
         for (int x = 0; x < height; x++)
         {
             for (int y = 0; y < width; y++)
             {
                 Vector2 pos = new Vector2(x, y);
-                float range = (p - pos).magnitude;
+                float range = (uv - pos).magnitude;
                 if (range < size * 0.625f)
                 {
                     buffer.SetValue(col, x + height * y);
