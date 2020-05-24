@@ -24,6 +24,8 @@ public class PlayerManager : MonoBehaviour
 
     private Vector3 moveDirection = Vector2.zero;
     private Rigidbody rb = null;
+    private float horizontal = 0;
+    private float vartical = 0;
     private List<PaintObject> paintObjects = new List<PaintObject>();
 
     void Start()
@@ -83,6 +85,9 @@ public class PlayerManager : MonoBehaviour
             float par = PaintPixcelCount / AllPixcelCount * 100f;//パーセンテージに変換
             text.text = par.ToString();
         }
+
+        horizontal = Input.GetAxis("Horizontal");
+        vartical = Input.GetAxis("Vertical");
     }
 
     private void FixedUpdate()
@@ -95,8 +100,6 @@ public class PlayerManager : MonoBehaviour
     {
         Vector3 forward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
         Vector3 right = Camera.main.transform.right;
-        float horizontal = Input.GetAxis("Horizontal");
-        float vartical = Input.GetAxis("Vertical");
         Vector3 targetDirection = horizontal * right + vartical * forward;//進む方向の決定
         moveDirection = targetDirection * Speed;
         rb.AddForce(moveDirection);
