@@ -5,9 +5,7 @@ public class Paint : MonoBehaviour
     public Color color { private get; set; }
     public float Size { private get; set; }
 
-    private Rigidbody rb = default;
-    private float time = 0;
-    private bool isChanged = false;
+    private Rigidbody rb = null;
 
     private void Start()
     {
@@ -16,34 +14,7 @@ public class Paint : MonoBehaviour
         Destroy(gameObject, 3);
     }
 
-    private void Update()
-    {
-        time += Time.deltaTime;
-        if(time > 0.5f && !isChanged)
-        {
-            Collider[] colider = GetComponents<Collider>();
-            if (colider.Length > 0)
-            {
-                foreach (Collider col in colider)
-                {
-                    col.isTrigger = false;
-                }
-                isChanged = true;
-            }
-        }
-    }
-
     private void OnTriggerEnter(Collider other)
-    {
-        ColliderEnter();
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        ColliderEnter();
-    }
-
-    private void ColliderEnter()
     {
         Vector3 _direction = 5 * (rb.velocity + transform.forward) / 2;
         Vector3 direction = normal(_direction);
